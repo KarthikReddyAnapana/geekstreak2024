@@ -1,0 +1,33 @@
+Day 1 of hashtag#GeekStreak2024 in collaboration with 
+hashtag#DeutscheBank is done! ✅ Today's challenge: Circle of Strings – and what a brain-teaser it was! 🔄💡
+
+hashtag#geekstreak2024 
+hashtag#deutschebank
+hashtag#Day1 
+hashtag#LetsCodeTogether hashtag
+hashtag#21DaysOfCode
+GeeksforGeeks Deutsche Bank
+
+
+class Solution {
+  public:
+    long long minCost(vector<long long>& arr) {
+          priority_queue<long long ,vector<long long >,greater<long long >>q;
+                for(auto x: arr)
+                {
+                    q.push(x);
+                }
+                 long long ans=0;
+           while(q.size()>1)
+           {
+                 long long first = q.top();
+                  q.pop();
+                   long long second=q.top();
+                   q.pop();
+                    ans+=first+second;
+                    q.push(first+second);
+           }
+             return ans;
+          
+    }
+};
