@@ -1,0 +1,27 @@
+class Solution {
+  public:
+
+    void rearrange(vector<int> &arr) {
+        // code here
+        vector<int>one ; 
+        vector<int>two ; 
+        int si = max(one.size() , two.size()) ; 
+        vector<int>ans ; 
+        for(int i=0;i<arr.size();i++){
+            if(arr[i]<0){
+                two.push_back(arr[i]) ; 
+            }else{
+                one.push_back(arr[i]) ; 
+            }
+        }int i=0 , j=0 ; 
+        while(i<one.size() && j<two.size()){
+            ans.push_back(one[i++]) ; 
+            ans.push_back(two[j++]) ; 
+        }while(i<one.size()){
+            ans.push_back(one[i++]) ; 
+        }while(j<two.size()){
+            ans.push_back(two[j++]) ; 
+        }
+        arr = ans ; 
+    }
+};
