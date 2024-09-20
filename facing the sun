@@ -1,0 +1,21 @@
+
+
+
+class Solution {
+  public:
+    // Returns count buildings that can see sunlight
+    int countBuildings(vector<int> &ht) {
+        int cur=0, counts=0;  // current max ht of buildings, count of building that
+                               // can see the sunlight
+        for(int h:ht)          // iterate through each building height
+        {
+            if(h>cur)
+            {
+                cur=h;
+                counts++;
+            }
+        }
+        return counts;
+        // code here
+    }
+};
