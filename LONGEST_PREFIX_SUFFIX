@@ -1,0 +1,17 @@
+class Solution {
+  public:
+    int lps(string str) {
+        int n = str.size();   // stores the length of the input str
+        string rev = str;
+        reverse(rev.begin(), rev.end());
+    
+        for (int len = n - 1; len > 0; len--) { // loop checking substrings of decreasing 
+                                                 // lengths
+            if (memcmp(str.c_str(), str.c_str() + n - len, len) == 0) {
+                // memcmp= compares two block of memory, here is compars two strings. 
+                return len; // length of longest prefix
+            }
+        }
+        return 0; 
+    }
+};
