@@ -1,0 +1,26 @@
+class Solution {
+  public:
+    vector<int> findTwoElement(vector<int>& arr) {
+        int n = arr.size(); // gets the size of the array. 
+                            //Decrease all element by 1
+        for(int i=0;i<n;i++)
+            arr[i]--;        // to enable zero based indexing.
+                             //Increasing value by N to get Occurance
+        for(int i=0;i<n;i++)
+        {
+            arr[arr[i]%n]+=n; // 
+        }
+        vector<int> ans(2);
+        //finding Repeat and Missing Numbers
+        for(int i=0;i<n;i++)
+        {
+            if(arr[i]/n==2)
+            ans[0] = i+1;
+            
+            if(arr[i]/n==0)
+            ans[1] = i+1;
+        }
+            
+        return ans;
+    }
+};
